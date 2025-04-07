@@ -20,7 +20,7 @@ pipeline {
         stage('Detener contenedor de docker') {
             steps {
                 script {
-                    bat "docker stop $CONTAINER_NAME || true"
+                    bat "docker stop $CONTAINER_NAME" || echo "El contenedor no se está ejecutando"
                 }
             }
         }
